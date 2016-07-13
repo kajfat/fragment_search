@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:layout_marginLeft="@dimen/fragment_side"
+              android:layout_marginRight="@dimen/fragment_side"
+              android:background="@color/main_bg"
+              android:orientation="vertical">
+
+    <include layout="@layout/main_header"/>
+
+    <View style="@style/HorizontalDivider"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <com.brasnthingsinventory.View.CustomTextView
+            android:id="@+id/modeTitle"
+            style="@style/MainText.Label"
+            android:text="@string/search_manual"
+            app:assetFontName="light.otf"/>
+        <com.brasnthingsinventory.View.CustomTextView
+            android:id="@+id/back"
+            style="@style/BackBTN"
+            app:assetFontName="bold.otf"/>
+    </FrameLayout>
+
+    <View style="@style/HorizontalDivider"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/keyword_search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.brasnthingsinventory.View.CustomTextView
+                    style="@style/KeywordTitle"
+                    android:text="@string/insert_keyword_description"
+                    app:assetFontName="light.otf"/>
+
+                <com.brasnthingsinventory.View.CustomEditText
+                    android:id="@+id/keyword"
+                    style="@style/EditBox.Keyword"
+                    app:assetFontName="light.otf"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/advanced_search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.brasnthingsinventory.View.CustomTextView
+                        android:id="@+id/division"
+                        style="@style/TextSelector.Division"
+                        app:assetFontName="light.otf"/>
+
+                    <ImageView
+                        android:id="@+id/clear_division"
+                        style="@style/IconClear"
+                        android:visibility="invisible"/>
+                </FrameLayout>
+
+                <View style="@style/HorizontalDivider"/>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.brasnthingsinventory.View.CustomTextView
+                        android:id="@+id/department"
+                        style="@style/TextSelector.Department"
+                        app:assetFontName="light.otf"/>
+
+                    <ImageView
+                        android:id="@+id/clear_department"
+                        style="@style/IconClear"
+                        android:visibility="invisible"/>
+                </FrameLayout>
+
+                <View style="@style/HorizontalDivider"/>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.brasnthingsinventory.View.CustomTextView
+                        android:id="@+id/category"
+                        style="@style/TextSelector.Category"
+                        app:assetFontName="light.otf"/>
+
+                    <ImageView
+                        android:id="@+id/clear_category"
+                        style="@style/IconClear"
+                        android:visibility="invisible"/>
+                </FrameLayout>
+
+                <View style="@style/HorizontalDivider"/>
+            </LinearLayout>
+
+            <com.brasnthingsinventory.View.DateFilterView
+                android:id="@+id/dateFilter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"/>
+
+            <View style="@style/HorizontalDivider"/>
+
+            <ImageView
+                android:id="@+id/search"
+                style="@style/Icons.Search"
+                android:layout_marginTop="8dp"/>
+
+            <com.brasnthingsinventory.View.CustomTextView
+                android:id="@+id/searchToggle"
+                style="@style/MainText.SearchToggle"
+                android:text="@string/toggle_advanced_search"
+                app:assetFontName="light.otf"/>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
